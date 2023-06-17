@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                @(ViewData["MenuName"] ?? "Projeto App")
+                @(ViewData["MenuName"] ?? "Sistema de Tarefas")
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -25,14 +25,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    @*<li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>*@
-                    
                     @if (UserSession.Username == null)
                     {
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register</a>
                         </li>
                     }
                     @if (UserSession.Username != null)
@@ -76,7 +75,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2022 - SistemaTarefas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2022 - SistemaTarefas
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

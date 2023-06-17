@@ -28,7 +28,7 @@ namespace SistemaTarefas.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([Bind("Email,Password")] LoginModel login)
+        public Task<IActionResult> Login([Bind("Email,Password")] LoginModel login)
         {
             // var passHash = $"\\x{ComputeSha256Hash(login.Password)}";
 
@@ -39,14 +39,18 @@ namespace SistemaTarefas.Controllers
             {
                 UserSession.UserId = user.idUser;
                 UserSession.Username = user.name;
-                return RedirectToAction(controllerName: "Home", actionName: "Index");
+                return Task.FromResult<IActionResult>(RedirectToAction(controllerName: "Home", actionName: "Index"));
             }
             
             ViewData["HasError"] = true;
             
-            return View(login);
+            return Task.FromResult<IActionResult>(RedirectToAction("Home"));
         }
         
+        public IActionResult Home()
+        {
+            return RedirectToAction(controllerName: "Home", actionName: "Index");
+        }
         
         public IActionResult Logout()
         {
@@ -60,22 +64,5 @@ namespace SistemaTarefas.Controllers
             return (null);
         }
         
-        /*static string ComputeSha256Hash(string rawData)  
-        {  
-            // Create a SHA256   
-            using (SHA256 sha256Hash = SHA256.Create())  
-            {  
-                // ComputeHash - returns byte array  
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));  
-  
-                // Convert byte array to a string   
-                StringBuilder builder = new StringBuilder();  
-                for (int i = 0; i < bytes.Length; i++)  
-                {  
-                    builder.Append(bytes[i].ToString("x2"));  
-                }  
-                return builder.ToString();  
-            }  
-        }*/
     }
 }

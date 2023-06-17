@@ -26,8 +26,10 @@ namespace SistemaTarefas.Entities
         [Column("name")]
         [StringLength(100)]
         public string name { get; set; }
+        
         [Column("nhoras")]
-        public int? nhoras { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "O número de horas tem de ser positivo.")]
+        public int? nhoras { get; set; } = 0;
     }
 }
 
