@@ -9,121 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ES2
 build_property.RootNamespace = ES2
-build_property.ProjectDir = C:\Users\dugom\OneDrive\Ambiente de Trabalho\Geral\Uni\ES2TP_26205_23454\ES2\SistemaTarefas\
+build_property.ProjectDir = C:\Users\RafaelPereira\RiderProjects\ES2\SistemaTarefas\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\dugom\OneDrive\Ambiente de Trabalho\Geral\Uni\ES2TP_26205_23454\ES2\SistemaTarefas
+build_property.MSBuildProjectDirectory = C:\Users\RafaelPereira\RiderProjects\ES2\SistemaTarefas
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Pages/OldMeals/Index.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Pages/OldMeals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT2xkTWVhbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Home/Clients.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Home/Clients.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDbGllbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Home/Index.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Home/Privacy.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Login/Login.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Login/Logout.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Login/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/L_TarefasEmCurso/alinea7.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/L_TarefasEmCurso/alinea7.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTF9UYXJlZmFzRW1DdXJzb1xhbGluZWE3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/L_TarefasFinalizadas/alinea8.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/L_TarefasFinalizadas/alinea8.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTF9UYXJlZmFzRmluYWxpemFkYXNcYWxpbmVhOC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/OldMeals/Index.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/OldMeals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2xkTWVhbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/Create.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/Delete.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/DeleteALL.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/DeleteALL.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcRGVsZXRlQUxMLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/Details.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/Edit.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Projetos/Index.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Projetos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamV0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/RelatorioMensal/alinea12.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/RelatorioMensal/alinea12.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRvcmlvTWVuc2FsXGFsaW5lYTEyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/RelatorioPessoal/alinea11.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/RelatorioPessoal/alinea11.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVsYXRvcmlvUGVzc29hbFxhbGluZWExMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Shared/Error.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Shared/_Layout.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Shared/_Layout2.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Tarefas/Create.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Tarefas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Tarefas/Delete.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Tarefas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Tarefas/Details.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Tarefas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Tarefas/Edit.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Tarefas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/Tarefas/Index.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/Tarefas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWZhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/_ViewImports.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dugom/OneDrive/Ambiente de Trabalho/Geral/Uni/ES2TP_26205_23454/ES2/SistemaTarefas/Views/_ViewStart.cshtml]
+[C:/Users/RafaelPereira/RiderProjects/ES2/SistemaTarefas/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

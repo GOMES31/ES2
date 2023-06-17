@@ -28,24 +28,7 @@
                     @*<li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>*@
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Tarefas" asp-action="Index">Tarefas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasEmCurso" asp-action="alinea7">Listar Tarefas em Curso</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasFinalizadas" asp-action="alinea8">Listar Tarefas Finalizadas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioPessoal" asp-action="alinea11">Relatorio Utilizador</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioMensal" asp-action="alinea12">Relatorio Projeto</a>
-                    </li>
+                    
                     @if (UserSession.Username == null)
                     {
                         <li class="nav-item">
@@ -54,6 +37,24 @@
                     }
                     @if (UserSession.Username != null)
                     {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Tarefas" asp-action="Index">Tarefas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasEmCurso" asp-action="alinea7">Listar Tarefas em Curso</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasFinalizadas" asp-action="alinea8">Listar Tarefas Finalizadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioPessoal" asp-action="alinea11">Relatorio Utilizador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioMensal" asp-action="alinea12">Relatorio Projeto</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="AlterarDados">AlterarDados</a>
                         </li>
