@@ -5,25 +5,28 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Eng. Sof II - @ViewData["Title"]</title>
+    <title>ESII Sistema Tarefas - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css"/>
     <link rel="stylesheet" href="~/css/register.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light navbar-custom border-bottom box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
-                @(ViewData["MenuName"] ?? "Sistema de Tarefas")
-            </a>
+            <div class="navbar-collapse collapse d-sm-flex justify-content-start align-items-center">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                    @(ViewData["MenuName"] ?? "Sistema de Tarefas")
+                </a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div class="navbar-collapse collapse d-sm-flex justify-content-end">
+                <ul class="navbar-nav ml-auto">
                     @if (UserSession.Username == null)
                     {
                         <li class="nav-item">
@@ -72,11 +75,6 @@
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container text-white">
-        &copy; Rafael Pereira Nº 23454, Eduardo Gomes Nº 26205
-    </div>
-</footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
