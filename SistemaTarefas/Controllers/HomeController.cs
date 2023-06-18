@@ -14,12 +14,10 @@ namespace SistemaTarefas.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly SistemaDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
             _context = new SistemaDbContext();
         }
 
