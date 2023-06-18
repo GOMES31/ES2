@@ -21,19 +21,10 @@
                 <input asp-for="hora_inicio" class="form-control" value="@DateTime.Now" />
                 <span asp-validation-for="hora_inicio" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-                <label asp-for="idproject" class="control-label"></label>
-                <select asp-for="idproject" class ="form-control" asp-items="ViewBag.UserId"></select>
-            </div>*@
             <div class="form-group">
                 <label asp-for="hora_fim" class="control-label"></label>
                 <input asp-for="hora_fim" class="form-control" />
                 <span asp-validation-for="hora_fim" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="estado" class="control-label"></label>
-                <select asp-for="estado" class ="form-control" asp-items="ViewBag.estado"></select>
-                <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="descricao" class="control-label"></label>
@@ -44,11 +35,6 @@
                 <label asp-for="precohora" class="control-label"></label>
                 <input asp-for="precohora" class ="form-control"/>
                 <span asp-validation-for="precohora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="id_utilizador" class="control-label"></label>
-                <select asp-for="id_utilizador" class ="form-control" value="null" asp-items="ViewBag.user"></select>
-                <span asp-validation-for="id_utilizador" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="id_projeto" class="control-label"></label>

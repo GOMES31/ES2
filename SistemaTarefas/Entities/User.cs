@@ -10,8 +10,14 @@ using Microsoft.EntityFrameworkCore;
 namespace SistemaTarefas.Entities
 {
     [Table("users")]
-    public partial class User
+    public class User
     {
+        public User(string email, string password, string name)
+        {
+            this.email = email;
+            this.password = password;
+            this.name = name;
+        }
         [Key]
         [Column("idUser")]
         public int idUser { get; set; }
