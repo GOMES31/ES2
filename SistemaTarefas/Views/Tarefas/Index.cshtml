@@ -34,13 +34,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Projetos.nomeProjeto)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Users.name)
-            </th>
-            
-            @*<th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -67,9 +60,6 @@
             </th>
             <td>
                 @Html.DisplayFor(modelItem => item.Projetos.nomeProjeto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Users.name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id_tarefa">Edit</a> | 

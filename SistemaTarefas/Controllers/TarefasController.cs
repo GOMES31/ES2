@@ -22,8 +22,7 @@ namespace SistemaTarefas.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var tarefasDbContext = _context.Tarefas.Include(x => x.Projetos)
-                .Include(x => x.Users);
+            var tarefasDbContext = _context.Tarefas.Include(x => x.Projetos);
             return View(await tarefasDbContext.OrderBy(m => m.id_tarefa).ToListAsync());
         }
 
@@ -35,7 +34,7 @@ namespace SistemaTarefas.Controllers
             }
 
             var tarefa = await _context.Tarefas
-                .Include(x => x.Users).Include(x => x.Projetos)
+                .Include(x => x.Projetos)
                 .FirstOrDefaultAsync(m => m.id_tarefa == id);
             if (tarefa == null)
             {
@@ -48,7 +47,6 @@ namespace SistemaTarefas.Controllers
         public IActionResult Create()
         {
             ViewData["user"] = new SelectList(_context.Users, "idUser", "email");
-            ViewData["estado"] = new SelectList(new List<string>(){"curso", "finalizado"});
             ViewData["projeto"] = new SelectList(_context.Projects, "idproject", "nomeProjeto");
             return View();
         }
@@ -56,14 +54,17 @@ namespace SistemaTarefas.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id_utilizador,id_tarefa,hora_inicio,hora_fim,estado,descricao,precohora")] Tarefa tarefa)
+        public async Task<IActionResult> Create([Bind("id_utilizador,id_tarefa,hora_inicio,hora_fim,descricao,precohora")] Tarefa tarefa)
         {
             var errors2 = new List<string>();
             System.Diagnostics.Debug.WriteLine(tarefa.hora_inicio);
             if (tarefa.hora_fim < tarefa.hora_inicio)
             {
-                errors2.Add("a data final nao pode ser menor que a data inicial");
+                errors2.Add("End date needs to be after start date");
             }
+
+            tarefa.estado = "curso";
+            tarefa.id_utilizador = UserSession.UserId;
             
             if (ModelState.IsValid && errors2.Count <= 0)
             {
@@ -71,7 +72,6 @@ namespace SistemaTarefas.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["estado"] = new SelectList(new List<string>(){"curso", "finalizado"});
             ViewData["Errors2"] = errors2;
             return View(tarefa);
         }

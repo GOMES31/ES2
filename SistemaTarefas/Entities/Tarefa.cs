@@ -28,6 +28,7 @@ namespace SistemaTarefas.Entities
         public string descricao { get; set; }
         
         [Column("precohora")]
+        [Range(0, int.MaxValue)]
         public decimal? precohora { get; set; }
         
         [ForeignKey("Projetos")]
@@ -36,7 +37,6 @@ namespace SistemaTarefas.Entities
         
         [ForeignKey("Users")]
         public int? id_utilizador { get; set; }
-        public virtual User Users { get; set; }
-        
+
     }
 }
