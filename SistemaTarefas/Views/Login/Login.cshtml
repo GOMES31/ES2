@@ -6,11 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 align="center">Login</h1>
+<h1 align="center" class="login-title">Login</h1>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="login-container">
+    <div class="col-md-4 register-form mx-auto"> <!-- Adicionada a classe "mx-auto" -->
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
