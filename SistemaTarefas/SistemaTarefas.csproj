@@ -27,11 +27,25 @@
 
     <ItemGroup>
       <Content Remove="Views\Home\Test.cshtml" />
+      <Content Remove="Content\**" />
     </ItemGroup>
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\OldMeals\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Register\Register.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Content\styles.css" />
+      <None Remove="Content\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Content\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Content\**" />
     </ItemGroup>
 
 </Project>
