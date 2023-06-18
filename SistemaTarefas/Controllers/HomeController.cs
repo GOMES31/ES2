@@ -14,19 +14,16 @@ namespace SistemaTarefas.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly SistemaDbContext _db;
+        private readonly SistemaDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
-            _db = new SistemaDbContext();
+            _context = new SistemaDbContext();
         }
 
+        
         public IActionResult Index()
         {
-            /*var user = _db.Users.Find(UserSession.UserId);
-            ViewData["User"] = user;*/
             return View();
         }
 
