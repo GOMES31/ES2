@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Eng. Sof II - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/register.css" />
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light navbar-custom border-bottom box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
                 @(ViewData["MenuName"] ?? "Sistema de Tarefas")
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -22,48 +24,45 @@
             </button>
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
                     @if (UserSession.Username == null)
                     {
-                        <li class="nav-item ">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Register" asp-action="Register">Register</a>
                         </li>
                     }
                     @if (UserSession.Username != null)
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Projetos" asp-action="Index">Projetos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tarefas" asp-action="Index">Tarefas</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Tarefas" asp-action="Index">Tarefas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasEmCurso" asp-action="alinea7">Listar Tarefas em Curso</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="L_TarefasEmCurso" asp-action="alinea7">Listar Tarefas em Curso</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="L_TarefasFinalizadas" asp-action="alinea8">Listar Tarefas Finalizadas</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="L_TarefasFinalizadas" asp-action="alinea8">Listar Tarefas Finalizadas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioPessoal" asp-action="alinea11">Relatorio Utilizador</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="RelatorioPessoal" asp-action="alinea11">Relatorio Utilizador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="RelatorioMensal" asp-action="alinea12">Relatorio Projeto</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="RelatorioMensal" asp-action="alinea12">Relatorio Projeto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="AlterarDados">AlterarDados</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="AlterarDados">AlterarDados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">LogOUT</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Login" asp-action="Logout">LogOUT</a>
                         </li>
-                        
                     }
                 </ul>
             </div>
+
         </div>
     </nav>
 </header>
@@ -74,8 +73,8 @@
 </div>
 
 <footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2022 - SistemaTarefas
+    <div class="container text-white">
+        &copy; Rafael Pereira Nº 23454, Eduardo Gomes Nº 26205
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

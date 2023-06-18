@@ -1,0 +1,51 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilo do formulário de registro */
+.register-form {
+    max-width: 500px; /* Aumenta a largura do formulário */
+    margin: 0 auto;
+}
+
+.register-form h1 {
+    text-align: center;
+    font-size: 28px; /* Aumenta o tamanho do título */
+}
+
+
+.register-form .form-group {
+    margin-bottom: 20px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 12px; /* Aumenta o tamanho do padding */
+    font-size: 16px; /* Aumenta o tamanho do texto */
+}
+
+.register-form input[type="submit"] {
+    width: 100%;
+    padding: 12px; /* Aumenta o tamanho do padding */
+    font-size: 18px; /* Aumenta o tamanho do texto */
+    background-color: #083c5c; /* Define a cor de fundo do botão */
+    color: #fff; /* Define a cor do texto do botão */
+}
+
+.register-form .text-danger {
+    display: block;
+    margin-top: 5px;
+}
+
+.register-form .error-message {
+    color: red;
+}
+
+
+
