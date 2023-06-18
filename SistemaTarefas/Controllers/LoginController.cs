@@ -30,14 +30,12 @@ namespace SistemaTarefas.Controllers
         [ValidateAntiForgeryToken]
         public Task<IActionResult> Login([Bind("Email,Password")] LoginModel login)
         {
-            // var passHash = $"\\x{ComputeSha256Hash(login.Password)}";
 
             var user = _context.Users
                 .FirstOrDefault(u => u.email.Equals(login.Email) && u.password.Equals(login.Password));
 
             if (user != null)
             {
-                UserSession.UserId = user.idUser;
                 UserSession.Username = user.name;
                 return Task.FromResult<IActionResult>(RedirectToAction(controllerName: "Home", actionName: "Index"));
             }
@@ -54,8 +52,7 @@ namespace SistemaTarefas.Controllers
         
         public IActionResult Logout()
         {
-            UserSession.UserId = null;
-                UserSession.Username = null;
+            UserSession.Username = null;
                 return RedirectToAction(controllerName: "Home", actionName: "Index");
         }
         

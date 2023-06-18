@@ -1,10 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.DiaSymReader;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using SistemaTarefas.Context;
 using SistemaTarefas.Entities;
 
@@ -22,8 +26,14 @@ namespace SistemaTarefas.Controllers
         // GET: Meal
         public async Task<IActionResult> Index()
         {
-            var SistemaDbContext = _context.Projects;
-            return View(await SistemaDbContext.OrderBy(m => m.nomecliente).ToListAsync());
+
+            // Retrieve projects associated with the current user
+            var userProjects = await _context.Projects
+                .Where(p => p.Username == UserSession.Username)
+                .OrderBy(m => m.nomecliente)
+                .ToListAsync();
+
+            return View(userProjects);
         }
 
         // GET: Meal/Details/5
@@ -34,41 +44,37 @@ namespace SistemaTarefas.Controllers
                 return NotFound();
             }
 
-            var meal = await _context.Projects.Include(x => x.Tarefas).Where(y=>y.idproject == id).FirstOrDefaultAsync(m => m.idproject == id);
+            var projeto = await _context.Projects.Include(x => x.tarefas).Where(y=>y.idproject == id).FirstOrDefaultAsync(m => m.idproject == id);
             //var tarefas = await _context.Tarefas.Where(m => m.id_projeto == meal.idproject).ToListAsync();
-            if (meal == null)
+            if (projeto == null)
             {
                 return NotFound();
             }
 
-            return View(meal);
+            return View(projeto);
         }
-
-        // GET: Meal/Create
+        
         public IActionResult Create()
         {
-            // ViewData["UserId"] = new SelectList(_context.Users, "UserId", "Email");
             return View();
         }
-
-        // POST: Meal/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("nomeProjeto,precohora,nomecliente")] Projeto projeto)
         {
             if (ModelState.IsValid)
             {
+                projeto.Username = UserSession.Username;
+                
+                Debug.Write(projeto.idproject);
                 _context.Add(projeto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            // ViewData["UserId"] = new SelectList(_context.Users, "UserId", "Email", projeto.idproject);
             return View(projeto);
         }
-
-        // GET: Meal/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,17 +82,14 @@ namespace SistemaTarefas.Controllers
                 return NotFound();
             }
 
-            var meal = await _context.Projects.FindAsync(id);
-            if (meal == null)
+            var projeto = await _context.Projects.FindAsync(id);
+            if (projeto == null)
             {
                 return NotFound();
             }
-            return View(meal);
+            return View(projeto);
         }
-
-        // POST: Meal/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("idproject,nomeProjeto,precohora,nomecliente")] Projeto projeto)
@@ -105,23 +108,21 @@ namespace SistemaTarefas.Controllers
 
             if (ModelState.IsValid && errors.Count <= 0)
             {
-                try
-                {
-                    _context.Update(projeto);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!MealExists(projeto.idproject))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+
+                projeto.nomeProjeto = projeto.nomeProjeto;
+                projeto.nomeProjeto = projeto.nomeProjeto;
+                projeto.precohora = projeto.precohora;
+                projeto.nomecliente = projeto.nomecliente;
+                
+                _context.Update(projeto);
+
+                // Save the changes
+                await _context.SaveChangesAsync();
+
+                // Reload the updated project from the context
+                await _context.Entry(projeto).ReloadAsync();
+
+                return View(projeto);
             }
             ViewData["Errors"] = errors;
             return View(projeto);
@@ -155,7 +156,7 @@ namespace SistemaTarefas.Controllers
             {
                 foreach (var tarefa in tarefas)
                 {
-                    tarefa.Projetos = null;
+                    tarefa.projetos = null;
                     tarefa.id_projeto = null;
                     _context.Tarefas.Update(tarefa);
                 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 using SistemaTarefas.Context;
 using SistemaTarefas.Entities;
@@ -22,8 +23,7 @@ namespace SistemaTarefas.Controllers
         
         public async Task<IActionResult> Index()
         {
-            var tarefasDbContext = _context.Tarefas.Include(x => x.Projetos);
-            return View(await tarefasDbContext.OrderBy(m => m.id_tarefa).ToListAsync());
+            return View(await _context.Tarefas.Include(x => x.projetos).OrderBy(m => m.id_tarefa).ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -34,7 +34,7 @@ namespace SistemaTarefas.Controllers
             }
 
             var tarefa = await _context.Tarefas
-                .Include(x => x.Projetos)
+                .Include(x => x.projetos)
                 .FirstOrDefaultAsync(m => m.id_tarefa == id);
             if (tarefa == null)
             {
@@ -54,7 +54,7 @@ namespace SistemaTarefas.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id_utilizador,id_tarefa,hora_inicio,hora_fim,descricao,precohora")] Tarefa tarefa)
+        public async Task<IActionResult> Create([Bind("id_utilizador,id_tarefa,hora_inicio,hora_fim,descricao,precohora,nomeProjeto")] Tarefa tarefa)
         {
             var errors2 = new List<string>();
             System.Diagnostics.Debug.WriteLine(tarefa.hora_inicio);
@@ -64,8 +64,7 @@ namespace SistemaTarefas.Controllers
             }
 
             tarefa.estado = "curso";
-            tarefa.id_utilizador = UserSession.UserId;
-            
+            tarefa.Username = UserSession.Username;
             if (ModelState.IsValid && errors2.Count <= 0)
             {
                 _context.Add(tarefa);

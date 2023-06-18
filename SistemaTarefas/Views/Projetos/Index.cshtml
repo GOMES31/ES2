@@ -12,24 +12,24 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nomeProjeto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.precohora)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nomecliente)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>*@
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayName("Nome do Projeto")
+            @*@Html.DisplayNameFor(model => model.nomeProjeto)*@
+        </th>
+        <th>
+            @Html.DisplayName("Preço por Hora")
+            @*@Html.DisplayNameFor(model => model.precohora)*@
+        </th>
+        <th>
+            @Html.DisplayName("Nome do Cliente")
+            @*@Html.DisplayNameFor(model => model.nomecliente)*@
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.nomeProjeto)
@@ -40,9 +40,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.nomecliente)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.User.Name)
-            </td>*@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.idproject">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.idproject">Detalhes</a> |
@@ -50,6 +47,6 @@
                 <a asp-action="DeleteALL" asp-route-id="@item.idproject">Apagar Tudo</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

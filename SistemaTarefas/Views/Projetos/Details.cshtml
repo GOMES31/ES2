@@ -32,10 +32,10 @@
             @Html.DisplayFor(model => model.nomecliente)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Tarefas)
+            @Html.DisplayNameFor(model => model.tarefas)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tarefas)
+            @Html.DisplayFor(model => model.tarefas)
         </dd>
         @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.User)
@@ -90,7 +90,7 @@
         </tr>
     </thead>*@
     <tbody>
-    @foreach (var item in Model.Tarefas)
+    @foreach (var item in Model.tarefas)
     {
         <tr>
             <td>

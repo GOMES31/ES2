@@ -55,10 +55,7 @@ public class RegisterController : Controller
                 // Save the new user to the database
                 _context.Users.Add(newUser);
                 await _context.SaveChangesAsync().ConfigureAwait(false);
-                
-                UserSession.UserId = newUser.idUser;
-                UserSession.Username = newUser.name;
-                
+
                 // Redirect to the home page
                 return RedirectToAction("Index", "Home");
             }

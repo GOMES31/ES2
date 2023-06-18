@@ -14,25 +14,32 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id_tarefa)
+                @Html.DisplayName("ID")
+                @*@Html.DisplayNameFor(model => model.id_tarefa)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.hora_inicio)
+                @Html.DisplayName("Hora de Início")
+                @*@Html.DisplayNameFor(model => model.hora_inicio)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.hora_fim)
+                @Html.DisplayName("Hora de Fim")
+                @*@Html.DisplayNameFor(model => model.hora_fim)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.estado)
+                @Html.DisplayName("Estado")
+                @*@Html.DisplayNameFor(model => model.estado)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descricao)
+                @Html.DisplayName("Descrição")
+                @*@Html.DisplayNameFor(model => model.descricao)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.precohora)
+                @Html.DisplayName("Preço por Hora")
+                @*@Html.DisplayNameFor(model => model.precohora)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Projetos.nomeProjeto)
+                @Html.DisplayName("Nome do Projeto")
+                @*@Html.DisplayNameFor(model => model.Projetos.nomeProjeto)*@
             </th>
             <th></th>
         </tr>
@@ -59,7 +66,7 @@
                 @Html.DisplayFor(modelItem => item.precohora)
             </th>
             <td>
-                @Html.DisplayFor(modelItem => item.Projetos.nomeProjeto)
+                @Html.DisplayFor(modelItem => item.projetos.nomeProjeto)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id_tarefa">Edit</a> | 

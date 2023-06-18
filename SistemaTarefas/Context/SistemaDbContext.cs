@@ -28,6 +28,7 @@ namespace SistemaTarefas.Context
         public virtual DbSet<Projeto> Projects { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Tarefa> Tarefas { get; set; }
+
         public IQueryable<Tarefa> SearchTarefas(DateTime? pdi,DateTime? pdf)
         {
             var ipdi = new NpgsqlParameter("@dinicial", pdi);
@@ -102,11 +103,11 @@ namespace SistemaTarefas.Context
                 entity.Property(e => e.id_projeto)
                     .HasColumnName("id_projeto");
 
-                entity.Property(e => e.id_utilizador)
-                    .HasColumnName("id_utilizador");
+                entity.Property(e => e.Username)
+                    .HasColumnName("utilizador");
 
-                entity.HasOne(e => e.Projetos)
-                    .WithMany(p => p.Tarefas)
+                entity.HasOne(e => e.projetos)
+                    .WithMany()
                     .HasForeignKey(e => e.id_projeto)
                     .OnDelete(DeleteBehavior.Cascade);
             });

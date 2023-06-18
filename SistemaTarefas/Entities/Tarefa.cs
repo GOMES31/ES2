@@ -33,10 +33,11 @@ namespace SistemaTarefas.Entities
         
         [ForeignKey("Projetos")]
         public int? id_projeto { get; set; }
-        public virtual Projeto Projetos { get; set; }
-        
-        [ForeignKey("Users")]
-        public int? id_utilizador { get; set; }
 
+
+        [ForeignKey("utilizador")]
+        public string Username { get; set; }
+
+        public Projeto projetos { get; set; }
     }
 }

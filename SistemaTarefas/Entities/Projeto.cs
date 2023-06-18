@@ -16,18 +16,23 @@ namespace SistemaTarefas.Entities
         [Key]
         [Column("idproject")]
         public int idproject { get; set; }
-        [Required]
-        [Column("nome")]
-        [StringLength(100)]
         
-        [DisplayName("Nome")]
+        
+        [Required]
+        [StringLength(100)]
+        [Column("nomeProjeto")]
         public string nomeProjeto { get; set; }
+        
         [Column("precohora")]
         [Range(0, int.MaxValue)]
         public decimal? precohora { get; set; }
         [Column("nomecliente")]
         public string nomecliente { get; set; }
-        public virtual IEnumerable<Tarefa> Tarefas { get; set; }
-    }
 
+        [Column("utilizador")] 
+        public string Username { get; set; }
+        public ICollection<Tarefa> tarefas { get; set; }
+        
+    }
+    
 }
