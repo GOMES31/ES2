@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/yI4Zt+5WIgrNeMa8CEvJmMkXGm9chDgdIePedn1GmA=",
+  "Hash": "ouuyqsbt8LUAsE01qlrZurFYcC9pX8STiWraVuMH6cY=",
   "Source": "SistemaTarefas",
   "BasePath": "_content/SistemaTarefas",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\RafaelPereira\\RiderProjects\\ES2\\SistemaTarefas\\wwwroot\\css\\login.css",
+      "SourceId": "SistemaTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\RafaelPereira\\RiderProjects\\ES2\\SistemaTarefas\\wwwroot\\",
+      "BasePath": "_content/SistemaTarefas",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
     {
       "Identity": "C:\\Users\\RafaelPereira\\RiderProjects\\ES2\\SistemaTarefas\\wwwroot\\css\\register.css",
       "SourceId": "SistemaTarefas",

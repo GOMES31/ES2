@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\RafaelPereira\\RiderProjects\\ES2\\SistemaTarefas\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\RafaelPereira\\RiderProjects\\ES2\\SistemaTarefas\\wwwroot\\css\\register.css",
       "PackagePath": "staticwebassets\\css\\register.css"
     },
