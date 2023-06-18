@@ -17,27 +17,27 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="hora_inicio" class="control-label"></label>
+                <label asp-for="hora_inicio" class="control-label">Hora de Início</label>
                 <input asp-for="hora_inicio" class="form-control" value="@DateTime.Now" />
                 <span asp-validation-for="hora_inicio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="hora_fim" class="control-label"></label>
+                <label asp-for="hora_fim" class="control-label">Hora de Fim</label>
                 <input asp-for="hora_fim" class="form-control" />
                 <span asp-validation-for="hora_fim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="descricao" class="control-label"></label>
+                <label asp-for="descricao" class="control-label">Descrição</label>
                 <input asp-for="descricao" class ="form-control"/>
                 <span asp-validation-for="descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="precohora" class="control-label"></label>
+                <label asp-for="precohora" class="control-label">Preço por Hora</label>
                 <input asp-for="precohora" class ="form-control"/>
                 <span asp-validation-for="precohora" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="id_projeto" class="control-label"></label>
+                <label asp-for="id_projeto" class="control-label">ID Projeto</label>
                 <select asp-for="id_projeto" class ="form-control" value="null" asp-items="ViewBag.projeto"></select>
                 <span asp-validation-for="id_projeto" class="text-danger"></span>
             </div>
