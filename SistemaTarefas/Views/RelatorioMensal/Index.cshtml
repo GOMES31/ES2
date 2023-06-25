@@ -13,10 +13,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width"/>
-    <title>Index</title>
+    <title>Relatório Mensal</title>
 </head>
 <body>
-<form method="post" asp-controller="RelatorioMensal" asp-action="alinea12">
+<form method="post" asp-controller="RelatorioMensal" asp-action="Index">
     <span>Id do projeto:</span><input type="number" name="id"/>
     <span>Data a ver (pode ser usado qualquer dia dentro do mes pretendido):</span><input type="date" name="data"/>
     <input type="submit" value="Search"/>
@@ -66,13 +66,13 @@
                     </td>
                     <td>
                         @{
-                            TimeSpan teste = (DateTime)customer.hora_fim - customer.hora_inicio;
+                            TimeSpan horas = (DateTime)customer.hora_fim - customer.hora_inicio;
                         }
-                        @(Math.Round(teste.TotalHours, 0))
+                        @(Math.Round(horas.TotalHours, 0))
                         
                     </td>
                     <td>
-                        @(Math.Round(teste.TotalHours, 0)*24)
+                        @(Math.Round(horas.TotalHours, 0)*24)
                     </td>
                     
                 </tr>

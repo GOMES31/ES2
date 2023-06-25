@@ -56,6 +56,10 @@ public class RegisterController : Controller
                 _context.Users.Add(newUser);
                 await _context.SaveChangesAsync().ConfigureAwait(false);
 
+                string email = newUser.email;
+
+                UserSession.Username = email;
+
                 // Redirect to the home page
                 return RedirectToAction("Index", "Home");
             }

@@ -59,19 +59,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.estado)
             </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.descricao)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.precohora)
-            </th>
             <td>
-                @Html.DisplayFor(modelItem => item.projetos.nomeProjeto)
+                @Html.DisplayFor(modelItem => item.descricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id_tarefa">Edit</a> | 
-                <a asp-action="Details" asp-route-id="@item.id_tarefa">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id_tarefa">Delete</a>
+                @Html.DisplayFor(modelItem => item.precohora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome_projeto)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.id_tarefa">Delete</a> |
+                @if (item.estado == "curso")
+                {
+                    <a asp-action="Edit" asp-route-id="@item.id_tarefa">Edit</a>
+                }
             </td>
         </tr>
 }

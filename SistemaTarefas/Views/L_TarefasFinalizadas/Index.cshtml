@@ -13,42 +13,37 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width"/>
-    <title>Index</title>
+    <title>Tarefas Finalizadas</title>
 </head>
 <body>
-<form method="post" asp-controller="L_TarefasEmCurso" asp-action="alinea7">
-    <br/>
-    <br/>
+<form method="post" asp-controller="L_TarefasFinalizadas" asp-action="Index">
     <table class="table">
         <tr>
             <th>ID Tarefa</th>
-            <th>Descricao</th>
-            <th>Estado</th>
-            <th>ID Projeto</th>
-            <th>nHoras</th>
+            <th>Data de Início</th>
+            <th>Data de Fim</th>
+            <th>Descrição</th>
         </tr>
         @foreach (Tarefa customer in Model)
         {
-            <tr>
+            @if (@customer.estado == "finalizado")
+            {
+                <tr>
                     <td>
                         @customer.id_tarefa
                     </td>
                     <td>
+                        @customer.hora_inicio
+                    </td>
+                    <td>
+                        @customer.hora_fim
+                    </td>
+                    <td>
                         @customer.descricao
                     </td>
-                    <td>
-                        @customer.estado
-                    </td>
-                    <td>
-                        @customer.id_projeto
-                    </td>
-                <td>
-                    @{
-                        TimeSpan teste = (DateTime)customer.hora_fim - customer.hora_inicio;
-                    }
-                    @(Math.Round(teste.TotalHours, 0))
-                </td>
                 </tr>
+            }
+
         }
     </table>
 </form>
