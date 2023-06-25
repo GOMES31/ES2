@@ -21,10 +21,15 @@
                 <select asp-for="estado" class ="form-control" asp-items="ViewBag.estado"></select>
                 <span asp-validation-for="estado" class="text-danger"></span>
             </div> 
-            <input type="hidden" asp-for="hora_inicio" />
+            <div class="form-group">
+                <label asp-for="hora_inicio" class="control-label"></label>
+                <div>
+                    <input type="text" asp-for="hora_inicio" value="@Model.hora_inicio" readonly/>
+                </div>
+            </div>
             <div class="form-group">
                 <label asp-for="hora_fim" class="control-label"></label>
-                <input asp-for="hora_fim" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" />
+                <input asp-for="hora_fim" class="form-control" value="@Model.hora_fim" />
                 <span asp-validation-for="hora_fim" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -36,16 +41,6 @@
                 <label asp-for="precohora" class="control-label"></label>
                 <input asp-for="precohora" class ="form-control"/>
                 <span asp-validation-for="precohora" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Username" class="control-label"></label>
-                <select asp-for="Username" class ="form-control" value="null" asp-items="ViewBag.user"></select>
-                <span asp-validation-for="Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="id_projeto" class="control-label"></label>
-                <select asp-for="id_projeto" class ="form-control" value="null" asp-items="ViewBag.projeto"></select>
-                <span asp-validation-for="id_projeto" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

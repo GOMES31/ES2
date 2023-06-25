@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace SistemaTarefas.Entities
 {
     [Table("projects")]
-    public partial class Projeto
+    public class Projeto
     {
         [Key]
         [Column("idproject")]
@@ -31,7 +31,7 @@ namespace SistemaTarefas.Entities
 
         [Column("utilizador")] 
         public string Username { get; set; }
-        public ICollection<Tarefa> tarefas { get; set; }
+        public List<Tarefa> tarefas { get; set; }
         
     }
     

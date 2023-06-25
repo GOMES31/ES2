@@ -9,6 +9,7 @@ using SistemaTarefas.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SistemaTarefas.Entities;
 
 namespace SistemaTarefas.Controllers
 {
@@ -28,21 +29,34 @@ namespace SistemaTarefas.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public Task<IActionResult> Login([Bind("Email,Password")] LoginModel login)
+        public async Task<IActionResult> Login([Bind("Email,Password")] LoginModel login)
         {
 
-            var user = _context.Users
-                .FirstOrDefault(u => u.email.Equals(login.Email) && u.password.Equals(login.Password));
-
-            if (user != null)
+            var users = await _context.Users.ToListAsync();
+            
+            
+            // Check if the register.Email already exists in the userEmails list
+            if(!users.Any(u => u.email == login.Email))
             {
-                UserSession.Username = user.name;
-                return Task.FromResult<IActionResult>(RedirectToAction(controllerName: "Home", actionName: "Index"));
+                ModelState.AddModelError("Email", "Email not found.");
+                return View();
             }
             
-            ViewData["HasError"] = true;
+            // Find the user with the matching email
+            User user = users.FirstOrDefault(u => u.email == login.Email);
+
+            // Check if the password is correct
+            if (user.password != login.Password)
+            {
+                ModelState.AddModelError("Password", "Palavra-passe incorreta!");
+                return View();
+            }
+
+            string email = user.email;
+            UserSession.Username = email;
             
-            return Task.FromResult<IActionResult>(RedirectToAction("Home"));
+            // Redirect to the home page
+            return RedirectToAction("Index", "Home");
         }
         
         public IActionResult Home()
@@ -52,14 +66,9 @@ namespace SistemaTarefas.Controllers
         
         public IActionResult Logout()
         {
-            UserSession.Username = null;
+                UserSession.Username = null;
                 return RedirectToAction(controllerName: "Home", actionName: "Index");
         }
-        
-        public IActionResult AlterarDados()
-        {
-            return (null);
-        }
-        
+
     }
 }

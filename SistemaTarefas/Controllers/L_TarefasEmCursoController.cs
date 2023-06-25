@@ -16,17 +16,23 @@ namespace SistemaTarefas.Controllers
 {
     public partial class L_TarefasEmCursoController : Controller
     {
-        private SistemaDbContext Context { get; }
+        private readonly SistemaDbContext _context;
 
         public L_TarefasEmCursoController()
         {
-            this.Context = new SistemaDbContext();
+            _context = new SistemaDbContext();
         }
 
-        public IActionResult alinea7()
+        public async Task<IActionResult> Index()
         {
-            List<Tarefa> tarefas = this.Context.SearchTarefasalinea7().ToList();
-            return View(tarefas);
+            var user = UserSession.Username;
+            
+                        var tasks = await _context.Tarefas
+                            .Where(t => t.Username == user && t.estado == "curso")
+                            .OrderBy(m => m.id_tarefa)
+                            .ToListAsync();
+            
+                        return View(tasks);
         }
     }
 }

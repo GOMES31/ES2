@@ -1,0 +1,61 @@
+﻿@using SistemaTarefas.Context
+@using SistemaTarefas.Entities
+@using Microsoft.AspNetCore.Localization
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+ 
+@model List<Tarefa>
+@{
+    ViewData["Title"] = "alinea8";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Tarefas em Curso</title>
+</head>
+<body>
+<form method="post" asp-controller="L_TarefasEmCurso" asp-action="Index">
+    <br/>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>ID Tarefa</th>
+            <th>Descrição</th>
+            <th>Estado</th>
+            <th>ID Projeto</th>
+            <th>Nome do Projeto</th>
+            <th>Número de Horas</th>
+        </tr>
+        @foreach (Tarefa customer in Model)
+        {
+            <tr>
+                <td>
+                    @customer.id_tarefa
+                </td>
+                <td>
+                    @customer.descricao
+                </td>
+                <td>
+                    @customer.estado
+                </td>
+                <td>
+                    @customer.id_projeto
+                </td>
+                <td>
+                    @customer.nome_projeto
+                </td>
+                <td>
+                    @{
+                        TimeSpan horas = (DateTime)customer.hora_fim - customer.hora_inicio;
+                    }
+                    @(Math.Round(horas.TotalHours, 0))
+                </td>
+            </tr>
+        }
+    </table>
+</form>
+</body> 
+</html>

@@ -30,14 +30,13 @@ namespace SistemaTarefas.Entities
         [Column("precohora")]
         [Range(0, int.MaxValue)]
         public decimal? precohora { get; set; }
-        
-        [ForeignKey("Projetos")]
         public int? id_projeto { get; set; }
 
+        
+        public string nome_projeto { get; set; }
 
         [ForeignKey("utilizador")]
         public string Username { get; set; }
-
-        public Projeto projetos { get; set; }
+        
     }
 }

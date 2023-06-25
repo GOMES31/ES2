@@ -35,10 +35,6 @@ namespace SistemaTarefas.Context
             var ipdf = new NpgsqlParameter("@dfinal", pdf);
             return this.Tarefas.FromSqlInterpolated($"SELECT * FROM alinea8({ipdi},{ipdf})");
         }
-        public IQueryable<Tarefa> SearchTarefasalinea7()
-        {
-            return this.Tarefas.FromSqlRaw("SELECT * FROM alinea7");
-        }
         public IQueryable<Tarefa> SearchTarefasalinea11(DateTime idata,int iid)
         {
             var id = new NpgsqlParameter("@utilizadorinput", iid);
@@ -106,10 +102,8 @@ namespace SistemaTarefas.Context
                 entity.Property(e => e.Username)
                     .HasColumnName("utilizador");
 
-                entity.HasOne(e => e.projetos)
-                    .WithMany()
-                    .HasForeignKey(e => e.id_projeto)
-                    .OnDelete(DeleteBehavior.Cascade);
+                entity.Property(e => e.nome_projeto)
+                    .HasColumnName("nome_projeto");
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -138,6 +132,12 @@ namespace SistemaTarefas.Context
                 entity.Property(e => e.nhoras)
                     .HasColumnName("nhoras");
             });
+        }
+
+        public string GetProjectNameById(int? projectId)
+        {
+            var project = Projects.FirstOrDefault(p => p.idproject == projectId);
+            return project?.nomeProjeto;
         }
     }
 }
