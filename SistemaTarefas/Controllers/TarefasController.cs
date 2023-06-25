@@ -87,6 +87,7 @@ namespace SistemaTarefas.Controllers
                 if (selectedProject != null)
                 {
                     selectedProject.tarefas.Add(tarefa);
+                    selectedProject.precohora += tarefa.precohora;
 
                     _context.Update(selectedProject);
                     await _context.SaveChangesAsync();
@@ -181,6 +182,17 @@ namespace SistemaTarefas.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var tarefa = await _context.Tarefas.FindAsync(id);
+
+            if (tarefa.id_projeto.HasValue)
+            {
+                var projeto = await _context.Projects.FindAsync(tarefa.id_projeto.Value);
+
+                if (projeto != null)
+                {
+                    projeto.precohora -= tarefa.precohora;
+                    _context.Update(projeto);
+                }
+            }
             _context.Tarefas.Remove(tarefa);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

@@ -60,12 +60,12 @@ namespace SistemaTarefas.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("nomeProjeto,precohora,nomecliente")] Projeto projeto)
+        public async Task<IActionResult> Create([Bind("nomeProjeto,nomecliente")] Projeto projeto)
         {
             if (!ModelState.IsValid) return View(projeto);
             projeto.Username = UserSession.Username;
             projeto.tarefas = new List<Tarefa>();
-                
+            projeto.precohora = 0;    
             _context.Add(projeto);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
@@ -89,7 +89,7 @@ namespace SistemaTarefas.Controllers
         
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("idproject,nomeProjeto,precohora,nomecliente")] Projeto projeto)
+        public async Task<IActionResult> Edit(int id, [Bind("idproject,nomeProjeto,nomecliente")] Projeto projeto)
         {
             if (id != projeto.idproject)
             {
@@ -98,16 +98,20 @@ namespace SistemaTarefas.Controllers
 
             var errors = new List<string>();
 
-            if (projeto.precohora is < 0)
-            {
-                errors.Add("The price can't be negative");
-            }
-
             if (ModelState.IsValid && errors.Count <= 0)
             {
+                var existingProject = await _context.Projects.FindAsync(id);
+                if (existingProject == null)
+                {
+                    return NotFound();
+                }
 
-                projeto.Username = UserSession.Username;
-                _context.Update(projeto);
+                existingProject.precohora = projeto.precohora;
+                existingProject.nomeProjeto = projeto.nomeProjeto;
+                existingProject.nomecliente = projeto.nomecliente;
+
+                existingProject.Username = UserSession.Username;
+                _context.Update(existingProject);
 
                 // Save the changes
                 await _context.SaveChangesAsync();
@@ -143,23 +147,28 @@ namespace SistemaTarefas.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var projeto = await _context.Projects.FindAsync(id);
-            var tarefas = await _context.Tarefas.Where(m => m.id_projeto == projeto.idproject).ToListAsync();
-            if (projeto!= null)
+
+            if (projeto != null)
             {
+                var tarefas = await _context.Tarefas.Where(t => t.id_projeto == id).ToListAsync();
+
                 foreach (var tarefa in tarefas)
                 {
-                    tarefa.nome_projeto = null;
                     tarefa.id_projeto = null;
+                    tarefa.nome_projeto = null;
+                    projeto.tarefas.Remove(tarefa);
                     _context.Tarefas.Update(tarefa);
                 }
+                await _context.SaveChangesAsync();
+                
                 _context.Projects.Remove(projeto);
+
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
-            
-            return View();
-            
+
+            return NotFound();
         }
         public async Task<IActionResult> DeleteALL(int? id)
         {
@@ -184,19 +193,20 @@ namespace SistemaTarefas.Controllers
         {
             var projeto = await _context.Projects.FindAsync(id);
             var tarefas = await _context.Tarefas.Where(m => m.id_projeto == projeto.idproject).ToListAsync();
+
             if (projeto != null)
             {
-                foreach (var tarefa in tarefas)
-                {
-                    _context.Tarefas.Remove(tarefa);
-                }
+                _context.Tarefas.RemoveRange(tarefas);
+
+                await _context.SaveChangesAsync();
+                
                 _context.Projects.Remove(projeto);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
 
+                return RedirectToAction("Index");
             }
-            return View();
-            
+
+            return NotFound();
         }
     }
 }

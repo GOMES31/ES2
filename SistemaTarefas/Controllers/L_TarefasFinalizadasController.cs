@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SistemaTarefas.Controllers
 {
-    public partial class L_TarefasFinalizadasController : Controller
+    public class L_TarefasFinalizadasController : Controller
     {
         private readonly SistemaDbContext _context;
 
