@@ -30,6 +30,8 @@ namespace SistemaTarefas.Entities
         [Column("precohora")]
         [Range(0, int.MaxValue)]
         public decimal? precohora { get; set; }
+        
+        [ForeignKey("Projeto")]
         public int? id_projeto { get; set; }
 
         

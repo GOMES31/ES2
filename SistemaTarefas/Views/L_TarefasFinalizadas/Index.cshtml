@@ -4,7 +4,7 @@
  
 @model List<Tarefa>
 @{
-    ViewData["Title"] = "alinea8";
+    ViewData["Title"] = "TarefasFinalizada";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
  
@@ -17,11 +17,12 @@
 </head>
 <body>
 <form method="post" asp-controller="L_TarefasFinalizadas" asp-action="Index">
+    <br/>
+    <br/>
     <table class="table">
         <tr>
             <th>ID Tarefa</th>
             <th>Data de Início</th>
-            <th>Data de Fim</th>
             <th>Descrição</th>
         </tr>
         @foreach (Tarefa customer in Model)
@@ -34,9 +35,6 @@
                     </td>
                     <td>
                         @customer.hora_inicio
-                    </td>
-                    <td>
-                        @customer.hora_fim
                     </td>
                     <td>
                         @customer.descricao

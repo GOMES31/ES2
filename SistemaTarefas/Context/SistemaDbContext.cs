@@ -28,25 +28,7 @@ namespace SistemaTarefas.Context
         public virtual DbSet<Projeto> Projects { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Tarefa> Tarefas { get; set; }
-
-        public IQueryable<Tarefa> SearchTarefas(DateTime? pdi,DateTime? pdf)
-        {
-            var ipdi = new NpgsqlParameter("@dinicial", pdi);
-            var ipdf = new NpgsqlParameter("@dfinal", pdf);
-            return this.Tarefas.FromSqlInterpolated($"SELECT * FROM alinea8({ipdi},{ipdf})");
-        }
-        public IQueryable<Tarefa> SearchTarefasalinea11(DateTime idata,int iid)
-        {
-            var id = new NpgsqlParameter("@utilizadorinput", iid);
-            var data = new NpgsqlParameter("@datainput", idata);
-            return this.Tarefas.FromSqlInterpolated($"SELECT * FROM alinea11({data},{id})");
-        }
-        public IQueryable<Tarefa> SearchTarefasalinea12(DateTime idata,int iid)
-        {
-            var id = new NpgsqlParameter("@projetoinput", iid);
-            var data = new NpgsqlParameter("@datainput", idata);
-            return this.Tarefas.FromSqlInterpolated($"SELECT * FROM alinea12({data},{id})");
-        }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -104,13 +86,15 @@ namespace SistemaTarefas.Context
 
                 entity.Property(e => e.nome_projeto)
                     .HasColumnName("nome_projeto");
+                
+                
             });
 
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("users"); // Set the table name
 
-                entity.HasKey(e => e.idUser); // Set the primary key
+                entity.HasKey(e => e.idUser);
 
                 entity.Property(e => e.idUser)
                     .HasColumnName("idUser");
